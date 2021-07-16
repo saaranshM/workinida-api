@@ -3,6 +3,7 @@ const app = express();
 const bcrypt = require("bcryptjs");
 const users = require("./store");
 
+// to add new user
 app.post("/app/sites", async (req, res) => {
   const { website, username, password } = req.body;
   //encrypts password with hasshing
@@ -17,6 +18,8 @@ app.post("/app/sites", async (req, res) => {
     status: "success",
   });
 });
+
+//to get all users
 app.get("/app/sites/list", (req, res) => {
   res.statusCode(200).send(users);
 });
