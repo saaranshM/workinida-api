@@ -1,8 +1,9 @@
 const express = require("express");
-const app = express();
 const bcrypt = require("bcryptjs");
 const users = require("./store");
 
+const app = express();
+app.use(express.json());
 // to add new user
 app.post("/app/sites", async (req, res) => {
   const { website, username, password } = req.body;
