@@ -14,16 +14,16 @@ app.post("/app/sites", async (req, res) => {
     password: encryptedPassword,
   };
   users.push(newObj);
-  res.statusCode(200).send({
+  res.status(200).send({
     status: "success",
   });
 });
 
 //to get all users
 app.get("/app/sites/list", (req, res) => {
-  res.statusCode(200).send(users);
+  res.status(200).send(users);
 });
 
-app.listen(() => {
+app.listen(3000, () => {
   console.log("Server is up on port " + 3000);
 });
