@@ -20,3 +20,7 @@ app.post("/app/sites", async (req, res) => {
 app.get("/app/sites/list", (req, res) => {
   res.statusCode(200).send(users);
 });
+
+app.listen(() => {
+  console.log("Server is up on port " + 3000);
+});
